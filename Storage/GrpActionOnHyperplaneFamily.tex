@@ -1,0 +1,288 @@
+\documentclass[a4paper,12pt]{article}
+\newcounter{example}[]
+\newenvironment{example}[1][]{\refstepcounter{example}\par\medskip
+   \noindent \textbf{Example~\theexample. #1} \rmfamily}{\medskip}
+   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{tikz-cd}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{mathtools}
+ \usepackage{float}
+\usepackage{amsthm}
+\usepackage{cite}
+\usepackage{datetime} % British format dates
+\usepackage[cm]{fullpage}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{stackrel,amssymb,amsmath}
+\usepackage[nottoc]{tocbibind}
+\usepackage{pgfplots}
+\usepackage{rotating}
+\usepackage[autostyle]{csquotes}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\newtheorem{problem}{Problem}
+\newtheorem{attempt}{Attempt}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\theoremstyle{indented}
+\newtheorem*{remark}{Remark}
+\newenvironment{titlemize}[1]{%
+  \paragraph{#1}
+  \begin{itemize}}
+  {\end{itemize}}
+  
+  \usepackage[T1]{fontenc}
+\usepackage{imakeidx}
+\makeindex[columns=3, title=Alphabetical Index, intoc]
+  
+  
+  %%%%%%%%%%5
+\newcommand{\rightarrowdbl}{\rightarrow\mathrel{\mkern-14mu}\rightarrow}
+
+\newcommand{\xrightarrowdbl}[2][]{%
+  \xrightarrow[#1]{#2}\mathrel{\mkern-14mu}\rightarrow
+}
+%%%%%%%%%%%%%%5
+
+\title{Group action of hyperplane family}
+\author{Rhys Wells}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{titlemize}{Objectives}
+
+\item Problem 1: Replace coordinates of $\underline{x}$ in $W_D(l,S,k)$ by new coordinates $\lambda(\phi,\underlinee{x})$ and check if it satisfies the equation determining $W_D(l^{'},S^{'},k^{'})$.
+
+ 
+\end{titlemize}
+
+\hline
+The are the notes from 30/7/20. The material in the rest of the doc needs to be changed to fit these notes.
+
+\begin{itemize}
+    \item Note $d \ne \sum d_i$, but the total degree of the line bundle is $d= \omega (2g-2) + \sum d_i$ with twisting.
+
+\item We are \textbf{changing $\omega$ to $s$} (in the literature usually called $l$ or $k$).
+
+\item The action of $\lambda$ does not change the coordinates this fixes $S$ (as it reflects and translates diherdral group) changes only the $k$ of $W_D(l,k,S)$. The action fixes $d$.
+
+\item Seperate the cases $g=1$ and $g \ge 2$. In $g=1$ have $x_S=k$ what happens when apply $\lambda$? Check that For $t=0$ only $k$ changes. For $g\ge 2$ have 
+
+$$ \lambda((\underline{d},s,t), \underline{x})= \underline{d} +s(2g-2)  \begin{bmatrix}
+           1 \\
+           \vdots \\
+           1
+         \end{bmatrix}
+ +(-1)^t \underline{x}$$
+
+
+we have 
+
+$$W_D(l,S,k):= \left\{ \underline{x} \mid x_S + \frac{ l(d+1-g - x_{[n] } ) } {2g-2} = k \right\}. $$
+
+have $x_{S} \mapsto s(2g-2)|S| + -1)^r x_{S} + d_S$
+
+substituting new corrdinates we get;
+
+$$s(2g-2)|S| + (-1)^t x_{S} + d_{S} +\frac{ l(d+1-g -(s(2g-2) n +(-1)^t x_{[n]} + d_{[n]} ) } {2g-2} = k$$ 
+
+the terms $s(2g-2)|S|$ and  $d_{S}$ change the value of $k$ and the term $s(2g-2) n$ in the fraction changes $k$ and $l$. The $d$ in $W_D(l,S,k)$ definition is unrealted to $\underline{d}$ in $\lambda((\underline{d},s,t), \underline{x})$. \textbf{Call $\underline{d}$ now $\underline{e}$ with $e_i$}
+
+Note when $d=0$ then get $\frac{1-g}{2g-2} = 1/2$. 
+
+\item We take $d=0$ with the benifit that $\Tilde{PR}^{0}$ is explicitley written as in pdf. 
+
+when apply the $\lambda$ get total degree change by $k\textbf{n}(2g-2) +\sum d_i =0$ 
+
+
+\end{itemize}
+
+
+
+
+
+\hline 
+
+
+\begin{definition}\label{planefam}  For $0\le l \le 2g-2 + \delta_{1,g}$, $S\subseteq [n] \setminus \{\delta_{1,g}\}$ and $k\in \mathbb{Z}$ excluding $l=0$ and $S=\emptyset$. We have the following family of hyperplanes,
+
+$$W_D(l,S,k):= \left\{ \underline{x} \mid x_S + \frac{ l(d+1-g - x_{[n]\setminus{\delta_{1,g}} } ) } {2g-2+\delta_{1,g}} = k \right\}. $$
+\end{definition}
+
+Consider the case $g \ge 2$ and $d=0$. Define $P_{g,n}$ as $$P_{g,n}= \{(d_1,\dots,d_n,\omega ) \in \mathbb{Z}^{n+1} \mid \omega (2g-2) + \sum d_i=0\}.$$ I have replaced $k$ is this equation (written in pdf) with $\omega$ to avoid confusion with $W_D(l,k,S)$. 
+
+
+\begin{titlemize}{Questions}
+
+\item  
+Note (Possible confusion here), under the conditions $g \ge 2$ and $d=0$ one has $\omega =0$. On page 35 remark 6.21 \cite{kass2019stability}, one defines $\Tilde{P}_{g,n}$ first, then we ask for $d=0=\sum d_i$. Then for the point $(d_1,\dots,d_n,\omega ) \in P_{g,n}$ one has $\omega (2g-2) + \sum d_i=0$, which implies $\omega =0$ as $g \ge 2$. Is $\omega =0$ in the $g \ge 2$ and $d=0$ case?
+
+
+\end{titlemize}
+
+
+\begin{problem}
+For $\phi = (\underline{d},\omega,t) \in \Tilde{P}_{g,n}$, show that $\lambda(\phi, W(l,k,S))=W(l^{'} ,k^{'},S^{'})$ for some $l^{'} ,k^{'},S^{'}$.\\
+
+This problem can be simplified by taking $g \ge 2$ and $d=g-1$ (or potentially $d=0$). 
+
+\end{problem}
+
+\begin{attempt}
+
+Consider the case $g=1,n=3$ one has the following, $l=0$ and
+
+$$W_D(0,\{2\}, k) = \left\{ \underline{x} \mid x_2=k\right\} $$
+
+$$W_D(0,\{3\}, k^{'}) = \left\{ \underline{x} \mid x_3=k^{'}\right\} $$
+
+
+$$W_D(0,\{2,3\}, k^{''}) = \left\{ \underline{x} \mid x_2 + x_3= k^{''}\right\} $$
+
+and $\lambda(\phi, \underline{x}) = (-1)^t + \underline{d}$, with $\underline{d} \in \mathbb{Z}^{n-1}$. Choose a point that belongs to a particular hyperplane family and consider the action of $\lambda$ for arbitary $\phi$ on the point. After this action does the point belong to another $W_D$ with different $l,S,k$? 
+
+\hfill \break
+
+Let $ \underline{x} \in W_D(0,\{2\}, k)$, then $\lambda (\phi, (k,x_3) ) = ( (-1)^{t} k +d_1,  (-1)^{t} x_3 +d_2 ) $. We have $x_2 = (-1)^{t} k +d_1$ so $\lambda (\phi, (k,x_3) ) \in W_D(0,\{2\}, k)$ as $k \in \mathbb{Z}$. It does not seem like the $l$ or $S$ change.
+\end{attempt}
+
+
+\begin{attempt}
+
+Let $g \ge 1$ and let $d$ be arbitrary (not yet $0$ due to the issue in the Question above). Want to show we can show the problem in this case.
+
+\begin{titlemize}{Question}
+  \item are $P_{g,n}$ and $\Tilde{P}_{g,n}$ defined in the pdf for $g \ge 2$ and $d=0$ specifically? 
+\end{titlemize} 
+
+
+Let $\underline{x} \in W(l,k,S)$ then $\lambda(\phi, \underline{x}) = (d_1 +\omega(2g-2) + (-1)^{t} x_1, \dots ,d_n +\omega(2g-2) + (-1)^{t} x_n )$. Insert $\lambda(\phi, \underline{x})$ into 
+
+\begin{equation} \label{hypereq}
+    x_S + \frac{ l(d+1-g - x_{[n]\setminus{\delta_{1,g}} } ) } {2g-2+\delta_{1,g}} = k.
+\end{equation}
+
+
+Then ask, does the result satisfy the equation determining the hyperplane for $W(l^{'} ,k^{'},S^{'})$? Without loss of generality (forgot the ordering on $S$) take $S=\{1,2,\dots,r\}$ with $|S|=r$. Multiply equation (\ref{hypereq}), by the denominator $2g-2+ \delta_{1,g}$. 
+
+
+$$ (2g-2+\delta_{1,g})x_S +  l(d+1-g - x_{[n]\setminus{\delta_{1,g}} } ) = (2g-2+\delta_{1,g}) k$$
+
+Recall $x_S= \sum_1^r x_i $ and $d=\sum^{n}_1 d_i$. Replace $x_i$ terms by those after the action of $\lambda$. Then,
+
+
+$$ (2g-2+\delta_{1,g})(\sum_{i=1}^{r} (d_i+\omega(2g-2)+(-1)^{t} x_i)) +  l(d+1-g - \sum_{i={1+\delta_{1,g}}} ^{n} (d_i+\omega(2g-2)+(-1)^{t} x_i  ) ) = (2g-2+\delta_{1,g}) k$$
+ 
+ \begin{titlemize}{Question}
+ \item  Can we write this back into the form of equation (\ref{hypereq})? (attempted rearranging but got confused with use of $\delta__{1,g}$).
+ \end{titlemize}
+
+ 
+
+% \hline
+%issue here with g=1 case and $\delta_{1,g}$ below is not correct.
+ %$$ (2g-2+\delta_{1,g})(\sum_{i=1}^{r} d_i +\omega(2g-2)r+(-1)^{t} \sum_{i=1}^{r} x_i) +  l(d+1-g -\sum_{i={1+\delta_{1,g}}} ^{n} d_i - (n-\delta_{1,g})\omega(2g-2)-(-1)^{t} \sum_{i=1+\delta_{1,g}}^n x_i   ) = (2g-2+\delta_{1,g}) k$$
+%\begin{equation}
+%\begin{align}
+ %     (2g-2+\delta_{1,g})(\sum_{i=1}^{r} d_i &+\omega(2g-2)r) +(2g-2+\delta_{1,g})(-1)^{t} \sum_{i=1}^{r} x_i)\\
+  %    &+ l(d+1-g -(-1)^{t} \sum_{i=1}^n x_i)+l(-\sum_{i={1+\delta_{1,g}}} ^{n} d_i - n\omega(2g-2) )\\
+%      &=(2g-2+\delta_{1,g}) k 
+%\end{align}
+%\end{equation}
+%\begin{equation}
+%\begin{align}
+ %     (2g-2+\delta_{1,g})(-1)^{t} \sum_{i=1}^{r} x_i)&+ l(d+1-g -(-1)^{t} \sum_{i=1}^n x_i)\\
+  %    &=(2g-2+\delta_{1,g}) k - (2g-2+\delta_{1,g})(\sum_{i=1}^{r} d_i +\omega(2g-2)r)\\
+   %   &+l(\sum_{i={1+\delta_{1,g}}} ^{n} d_i + n\omega(2g-2) )
+%\end{align}
+%\end{equation}
+%\hline 
+
+\end{attempt}
+
+\begin{attempt}
+
+
+Fix $g \ge 2$ (but do not let $d=0$ yet). Without loss of generality let $S=\{1,2,\dots, r\}$ and $|S|=r$. We have $\delta_{1,g}=0$ and
+
+\begin{equation} 
+    x_S + \frac{ l(d+1-g - x_{[n]}  ) } {2g-2} = k
+\end{equation}
+
+Multiplying by the denominator we have,
+
+$$(2g-2)x_S +l(d+1-g-x_{[n]}) =(2g-2)k.$$
+
+Replace $x_i$ by terms after the action of $\lambda$, then
+
+$$ (2g-2)[ \sum_{i=1}^{r} (d_i + \omega (2g-2) + (-1)^t x_i ] + l [d+1-g - \sum_{i=1}^{n} (d_i +\omega(2g-2)+(-1)^t x_i ] = (2g-2)k$$
+
+multiplying by $2g-2$
+
+$$ (2g-2)[ \sum_{i=1}^{r} (d_i + \omega (2g-2)] +(2g-2)[(-1)^{t}\sum_{i=1}^{r}( x_i )] + l [d+1-g -  (-1)^t\sum_{i=1}^{n} (x_i ) ]+l [-\sum_{i=1}^{n} (d_i +\omega(2g-2)] = (2g-2)k.$$
+
+Rearranging,
+
+$$(2g-2)[(-1)^{t}\sum_{i=1}^{r} x_i ] + l [d+1-g -  (-1)^t\sum_{i=1}^{n} x_i ] =(2g-2)k -
+(2g-2)[ \sum_{i=1}^{r} (d_i + \omega (2g-2)]
++l [\sum_{i=1}^{n} (d_i +\omega(2g-2)]$$
+
+Fix $t=0$, then the LHS is
+
+$$(2g-2)[\sum_{i=1}^{r} x_i ] + l [d+1-g - \sum_{i=1}^{n} x_i ],$$
+
+and of the form of equation (\ref{hypereq}). We want to show that the RHS is an integer after division by $2g-2$. In the definition of $P_{g,n}$ have $\omega(2g-2) + \sum_{i=1}^{n} d_i=0$.
+
+
+\begin{titlemize}{Question}
+ \item Can you use the definition of $P_{g,n}$ when $g=1$?
+\end{titlemize}
+
+Hence,
+
+$$LHS=(2g-2)[k- \sum_{i=1}^{r} (d_i + \omega (2g-2)]
++l [(n-1)\omega(2g-2)]$$
+
+So the RHS is an integer after divison by $2g-2$ and so lives on $W_D$ for a different $k$ value. 
+
+\begin{titlemize}{Question}
+ \item Questions can we determine which $S^{'}$ the $\lambda$ action moves $S$ to?
+ \item what about $l$. 
+ \item What happens when $t=1$?
+ 
+ %$$LHS= (2g-2)[-\sum_{i=1}^{r} x_i ] + l [d+1-g +\sum_{i=1}^{n} x_i ] $$
+ 
+\end{titlemize}
+
+
+
+\end{attempt}
+
+
+
+\printindex
+
+\bibliographystyle{alpha}
+\bibliography{bibtex}
+
+
+
+
+
+\end{document}
